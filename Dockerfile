@@ -13,12 +13,12 @@ RUN apt update && apt upgrade -y && \
     \
     git clone --depth=1 --recurse-submodules --single-branch --branch=master https://github.com/valhalla/mjolnir.git && \
     git clone --depth=1 --recurse-submodules --single-branch --branch=master https://github.com/valhalla/tools.git && \
-    pushd mjolnir && \
+    cd mjolnir && \
     ./scripts/dependencies.sh && ./scripts/install.sh && \
-    popd && \
-    pushd tools && \
+    cd .. && \
+    cd tools && \
     ./scripts/dependencies.sh && ./scripts/install.sh && \
-    popd && \
+    cd .. && \
     \
     ldconfig && \
     apt install -y  --no-install-recommends \
