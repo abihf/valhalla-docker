@@ -26,7 +26,7 @@ RUN apt update && apt upgrade -y && \
         libboost-filesystem1.54.0 libboost-graph1.54.0 \
         libboost-thread1.54.0 libboost-system1.54.0 libboost-regex1.54.0 \
         libboost-program-options1.54.0 && \
-    apt purge --auto-remove \
+    apt purge --auto-remove -y \
         git g++ gcc autoconf automake binutils `apt list --manual-installed | cut -d"/" -f1 | grep "\-dev"` && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /mjolnir /tools
